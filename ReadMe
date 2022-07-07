@@ -1,0 +1,17 @@
+This library is a wrapper which provides methods to facilitate the management of SDCards connected to SPI bus.
+This library uses "FatFs" library. Include: "FatFs\diskio.h" and "FatFs\ff.h"
+
+Notes:
+1. The library methods call the PSoC function "Cy_SCB_UART_PutString()" which writes to the serial port. Replace this call with your appropriate serial port function.
+2. The library uses a global string to write to serial port: "char string[60] = {0};"
+3. 
+
+Methods:
+SD_dir(): Lists SDCard contents to serial port
+SD_format(): Formats the SDCard
+SD_mount(): Mounts the SDCard
+SD_read_label(): Reads the label
+SD_new_file(): Creates a new file
+SD_close_file(): Closes the open file
+write_mic_data_SD(): This function was specific for certain project
+SD_detect_card(): In case the hardware has the SDCD pin available, use this function to detect the presence of the SDCard
